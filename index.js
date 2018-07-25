@@ -85,11 +85,15 @@ function addRabbitButton(label, screenFunction) {
 // SCREENS
 // ---------------------------------------------
 
+//video.onended = function () {
+
+//};
+ 
 function titleScreen() {
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalopening1.mp4');
+  changeVideo('videos/finalbluebookcover.mp4');
   //When video is clicked, move on to next video
   //video.addEventListener('click', secondScreen);
   //addButton('Skip the Intro', secondScreen);
@@ -100,7 +104,7 @@ function openingScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalopening1.mp4');
+  changeVideo('videos/finalopening3.mp4');
 setTimeout(function() {
 addSkipButton ('Next', threeLanesScreen);
  }, 97000);
@@ -121,16 +125,18 @@ function threeLanesScreen() {
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalthreelanes1.mp4');
+  changeVideo('videos/finalthreelanes3.mp4');
 
   // Show a button after 2 seconds
-  setTimeout(function() {
+  video.onended = function () {
+  // setTimeout(function() {
     // Button 1
     addRabbitButton('Rabbit Lane', rabbitFirstIntroScreen);
     addWolfButton('Wolf Lane', wolfFirstIntroScreen);
     addFoxButton('Fox Lane', foxFirstIntroScreen);
   
-  }, 1000);
+  // }, 1000);
+};
 }
 
 //PICKED RABBIT FIRST
@@ -138,93 +144,107 @@ function rabbitFirstIntroScreen() {
  overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbitintro1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalrabbitintro3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addEnterButton('Yes', rabbitEndScreen);
     addEnterButton('No', byeRabbitTwoLanesScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 66000);
+  // }, 66000);
+};
 }
 
 function rabbitEndScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbityes1.mp4');
-    setTimeout(function() {
+  changeVideo('videos/finalrabbityes3.mp4');
+  video.onended = function () {
+    // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 102000);
+  // }, 102000);
+};
 }
 
 function byeRabbitTwoLanesScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbitno1.mp4');
-  setTimeout(function() {
+  changeVideo('videos/finalrabbitno3.mp4');
+  video.onended = function () {
+  // setTimeout(function() {
     // Button 1
     addWolfButton('Wolf Lane', wolfSecondIntroRabbitScreen);
     addFoxButton('Fox Lane', foxSecondIntroRabbitScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 21000);
+  // }, 21000);
+};
 }
 
 function wolfSecondIntroRabbitScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalwolfintro1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalwolfintro3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addEnterButton('Yes', wolfEndScreen);
     addEnterButton('No', byeWolfOneLaneFoxScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 72000);
+  // }, 72000);
+};
 }
 
 function wolfEndScreen(){
   overlay.innerHTML = '';
   curtain.style.display = "none";
   video.style.filter = "none";
-  changeVideo('videos/finalwolfyes1.mp4');
-    setTimeout(function() {
+  changeVideo('videos/finalwolfyes3.mp4');
+  video.onended = function () {
+    // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 98000);
+  // }, 98000);
+};
 }
 
 function foxSecondIntroRabbitScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxintro1.mp4')
-  setTimeout(function() {
+  changeVideo('videos/finalfoxintro3.mp4')
+  video.onended = function () {
+  // setTimeout(function() {
     // Button 1
     addEnterButton('Yes', foxEndScreen);
     addEnterButton('No', byeFoxOneLaneWolfScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
   
-  }, 106000);
+  // }, 110000);
+};
 }
 
 function foxEndScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxyes1.mp4');
-    setTimeout(function() {
+  changeVideo('videos/finalfoxyes3.mp4');
+  video.onended = function () {
+    // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 117000);
+  // }, 117000);
+};
 }
 
 
@@ -232,27 +252,31 @@ function byeWolfOneLaneFoxScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalwolfno1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalwolfno3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addFoxButton('Fox Lane', foxThirdIntroScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
   
-  }, 17000);
+  // }, 17000);
+};
 }
 
 function foxThirdIntroScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxintro1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/finalfoxintro3.mp4');
+  video.onended = function () {
+   // setTimeout(function() {
     addEnterButton('Yes', foxEndScreen);
     addEnterButton('No', foxNoThird);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 106000);
+  // }, 106000);
+};
 }
 
 
@@ -260,12 +284,14 @@ function foxNoThird(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/foxthirdscreen1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/foxthirdscreen3.mp4');
+  video.onended = function () {
+   // setTimeout(function() {
     addSkipButton('Continue', blueEndScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 20000);
+  // }, 20000);
+};
 }
 
 
@@ -273,53 +299,60 @@ function byeFoxOneLaneWolfScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxno1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalfoxno3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addWolfButton('Wolf Lane', wolfThirdIntroScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 23000);
+  // }, 23000);
+};
 }
 
 function wolfThirdIntroScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalwolfintro1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/finalwolfintro3.mp4');
+  video.onended = function () {
+   // setTimeout(function() {
     addEnterButton('Yes', wolfEndScreen);
     addEnterButton('No', wolfNoThird);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 13000);
+  // }, 13000);
+};
 }
 
 function wolfNoThird(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/wolfthirdscreen1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/wolfthirdscreen3.mp4');
+  video.onended = function () {
+   // setTimeout(function() {
     addSkipButton('Continue', blueEndScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 13000);
+  // }, 13000);
+};
 }
 
 
 //PICKED WOLF FIRST
 function wolfFirstIntroScreen() {
   overlay.innerHTML = '';
-  changeVideo('videos/finalwolfintro1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalwolfintro3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addEnterButton('Yes', wolfEndScreen);
     addEnterButton('No', byeWolfTwoLanesScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 72000);
-
+  // }, 72000);
+};
 
 }
 
@@ -327,68 +360,78 @@ function byeWolfTwoLanesScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalwolfno1.mp4');
-  setTimeout(function() {
+  changeVideo('videos/finalwolfno3.mp4');
+  video.onended = function () {
+  // setTimeout(function() {
     // Button 1
     addRabbitButton('Rabbit Lane', rabbitSecondIntroWolfScreen);
     addFoxButton('Fox Lane', foxSecondIntroWolfScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 17000);
+  // }, 17000);
+};
 }
 
 function foxSecondIntroWolfScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxintro1.mp4')
-  setTimeout(function() {
+  changeVideo('videos/finalfoxintro3.mp4')
+  video.onended = function () {
+  // setTimeout(function() {
     // Button 1
     addEnterButton('Yes', foxEndScreen);
     addEnterButton('No', byeFoxOneLaneRabbitScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 106000);
+  // }, 110000);
+};
 }
 
 function rabbitSecondIntroWolfScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbitintro1.mp4')
-  setTimeout(function() {
+  changeVideo('videos/finalrabbitintro3.mp4')
+  video.onended = function () {
+  // setTimeout(function() {
     // Button 1
     addEnterButton('Yes', rabbitEndScreen);
     addEnterButton('No', byeRabbitOneLaneFoxScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 66000);
+  // }, 66000);
+};
 }
 
 function byeRabbitOneLaneFoxScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbitno1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalrabbitno3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addFoxButton('Fox Lane', foxThirdIntroScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 21000);
+  // }, 21000);
+};
 }
 
 function byeFoxOneLaneRabbitScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxno1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalfoxno3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addRabbitButton ('Rabbit Lane',rabbitThirdIntroScreen)
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 23000);
+  // }, 23000);
+};
 }
 
 
@@ -410,14 +453,16 @@ setTimeout(function() {
 //PICKED FOX FIRST
 function foxFirstIntroScreen(){
   overlay.innerHTML = '';
-  changeVideo('videos/finalfoxintro1.mp4')
-  setTimeout(function() {
+  changeVideo('videos/finalfoxintro3.mp4')
+  video.onended = function () {
+  // setTimeout(function() {
     // Button 1
     addEnterButton('Yes', foxEndScreen);
     addEnterButton('No', byeFoxTwoLanesScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 106000);
+  // }, 106000);
+};
 }
 
 
@@ -425,39 +470,45 @@ function byeFoxTwoLanesScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxno1.mp4')
-  setTimeout(function() {
+  changeVideo('videos/finalfoxno3.mp4')
+  video.onended = function () {
+  // setTimeout(function() {
     addWolfButton('Wolf Lane', wolfSecondIntroFoxScreen);
     addRabbitButton('Rabbit Lane', rabbitSecondIntroFoxScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 23000);
+  // }, 23000);
+};
 }
 
 function rabbitSecondIntroFoxScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbitintro1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalrabbitintro3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addEnterButton('Yes', rabbitEndScreen);
     addEnterButton('No', byeRabbitOneLaneWolfScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 66000);
+  // }, 66000);
+};
 }
 
 function byeRabbitOneLaneWolfScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbitno1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/finalrabbitno3.mp4');
+  video.onended = function () {
+   // setTimeout(function() {
     addWolfButton('Wolf Lane', wolfThirdIntroScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 21000);
+  // }, 21000);
+};
 }
 
 // function wolfThirdIntroScreen(){
@@ -477,63 +528,73 @@ function wolfSecondIntroFoxScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalwolfintro1.mp4');
-setTimeout(function() {
+  changeVideo('videos/finalwolfintro3.mp4');
+  video.onended = function () {
+// setTimeout(function() {
     // Button 1
     addEnterButton('Yes', wolfEndScreen);
     addEnterButton('No', byeWolfOneLaneRabbitScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 72000);
+  // }, 72000);
+};
 }
 
 function byeWolfOneLaneRabbitScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalwolfno1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/finalwolfno3.mp4');
+   video.onended = function () {
     addRabbitButton('Rabbit Lane', rabbitThirdIntroScreen);
     // curtain.style.display = "block";
     // video.style.filter = "blur(10px)";
-  }, 17000);
+  // }, 17000);
+};
 }
 
 function rabbitThirdIntroScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbitintro1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/finalrabbitintro3.mp4');
+  video.onended = function () {
+   // setTimeout(function() {
     addEnterButton('Yes', rabbitEndScreen);
     addEnterButton('No', rabbitNoThird);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 66000);
+  // }, 66000);
+};
 }
 
 function rabbitNoThird(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/rabbitthirdscreen1.mp4');
-   setTimeout(function() {
+  changeVideo('videos/rabbitthirdscreen3.mp4');
+  video.onended = function () {
+   // setTimeout(function() {
     addSkipButton('Continue', blueEndScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 17000);
+  // }, 18000);
+};
 }
 
 function blueEndScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalblueend1.mp4')
-  setTimeout(function() {
+  changeVideo('videos/finalblueend3.mp4')
+  video.onended = function () {
+  // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
     curtain.style.display = "block";
     video.style.filter = "blur(10px)";
-  }, 63000);
+  // }, 63000);
+};
 }
 
 titleScreen();
+
