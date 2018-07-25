@@ -597,4 +597,3 @@ function blueEndScreen(){
 }
 
 titleScreen();
-
