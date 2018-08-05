@@ -105,9 +105,12 @@ function openingScreen(){
   video.style.filter = "none";
   curtain.style.display = "none";
   changeVideo('videos/finalopening3.mp4');
-setTimeout(function() {
+    video.onended = function () {
+// setTimeout(function() {
 addSkipButton ('Next', threeLanesScreen);
- }, 97000);
+//  }, 97000);
+// }
+};
 }
 //97000
 //85200
@@ -160,7 +163,7 @@ function rabbitEndScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalrabbityes3.mp4');
+  changeVideo('videos/finalrabbityes5.mp4');
   video.onended = function () {
     // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
@@ -206,7 +209,7 @@ function wolfEndScreen(){
   overlay.innerHTML = '';
   curtain.style.display = "none";
   video.style.filter = "none";
-  changeVideo('videos/finalwolfyes3.mp4');
+  changeVideo('videos/finalwolfyes5.mp4');
   video.onended = function () {
     // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
@@ -237,7 +240,7 @@ function foxEndScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalfoxyes3.mp4');
+  changeVideo('videos/finalfoxyes5.mp4');
   video.onended = function () {
     // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
@@ -586,7 +589,7 @@ function blueEndScreen(){
   overlay.innerHTML = '';
   video.style.filter = "none";
   curtain.style.display = "none";
-  changeVideo('videos/finalblueend3.mp4')
+  changeVideo('videos/finalblueend5.mp4')
   video.onended = function () {
   // setTimeout(function() {
     addSkipButton('Restart', titleScreen);
